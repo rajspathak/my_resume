@@ -54,6 +54,7 @@ body {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  justify-content: center;
 }
 
 .text-content {
