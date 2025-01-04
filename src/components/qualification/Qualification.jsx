@@ -52,7 +52,7 @@ const Qualification = () => {
                             <span className="qualification__line"></span>
                         </div>
                         <div>
-                            <h3 className="qualification__title">Bachlor In Computer Application</h3>
+                            <h3 className="qualification__title">Bachelor In Computer Application</h3>
                             <span className="qualification__subtitle">B.D Evening College, Patna, Bihar</span>
                             <div className="qualification__calendar">
                                 <HiOutlineCalendar className="qualification__calendar-icon" />
