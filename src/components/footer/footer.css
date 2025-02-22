@@ -18,6 +18,7 @@
 
 .footer__link:hover {
     color: var(--title-color-dark);
+    text-decoration: underline; /* Adds underline effect */
 }
 
 .footer__list {
