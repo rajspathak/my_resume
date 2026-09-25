@@ -116,7 +116,7 @@
     position: relative;
     width: 100%;
     aspect-ratio: 4 / 5;
-    background: url(../../assets/header-icon.jpg) center / cover no-repeat;
+    background: url(../../assets/profile.jpg) center / cover no-repeat;
     border-radius: 2rem;
     border: 1px solid var(--border-color);
     box-shadow: 0 0 0 8px var(--container-color), var(--box-shadow);
