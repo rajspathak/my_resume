@@ -7,7 +7,6 @@ const tags = ["React Native", "React.js", "Next.js", "Node.js", "TypeScript", "G
 const Data = () => {
   return (
     <div className="home__data">
-        <span className="home__badge">React Native Developer</span>
         <h1 className="home__title">
             Hi, I'm <span className="home__title-accent">Raj Pathak</span>
         </h1>
@@ -21,7 +20,7 @@ const Data = () => {
 
         <div className="home__actions">
             <a href="#contact" className="button button--flex">
-                Say Hello
+                Hire me
                 <HiOutlineArrowSmRight className="button__icon" />
             </a>
             <a href="#portfolio" className="button button--ghost button--flex">

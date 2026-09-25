@@ -66,7 +66,7 @@ const Qualification = () => {
                     : "qualification__content"}>
                     <div className="qualification__data">
                         <div>
-                            <h3 className="qualification__title">React Native Developer</h3>
+                            <h3 className="qualification__title">Senior React Native Developer</h3>
                             <a href="https://ecarter.co/" className="qualification__company" target="_blank" rel="noopener noreferrer">Ecarter Technology</a>
                             <span className="qualification__subtitle">Noida, Uttar Pradesh</span>
                             <div className="qualification__calendar">
