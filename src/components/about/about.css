@@ -1,90 +1,74 @@
 .about__container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 360px 1fr;
     align-items: center;
     column-gap: 4rem;
 }
 
 .about__img {
-    width: 350px;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
     border-radius: 1.5rem;
-    justify-self: center;
-}
-
-.about__info {
-    grid-template-columns: repeat(3, 140px);
-    gap: 0.5rem;
-    margin-bottom: var(--mb-2);
-}
-
-.about__box {
-    background-color: var(--container-color);
-    border: 1px solid rgba(0, 0, 0, 12);
-    border-radius: 0.75rem;
-    text-align: center;
-    padding: 1rem 1.25rem;
-}
-
-.about__icon {
-    font-size: 1.5rem;
-    color: var(--title-color);
-    margin-bottom: var(--mb-0-5);
-}
-
-.about__title {
-    font-size: var(--small-font-size);
-    font-weight: var(--font-medium);
-}
-
-.about__subtitle {
-    font-size: var(--smaller-font-size);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 0 0 8px var(--container-color), 0 20px 60px rgba(79, 143, 247, 0.18);
 }
 
 .about__description {
-    padding: 0 4rem 0 0;
-    margin-bottom: var(--mb-2-5);
+    font-size: var(--normal-font-size);
+    line-height: 1.8;
+    margin-bottom: 2rem;
 }
 
-/* BREAK POINTS */
-@media screen and (max-width: 992px) {  
+.about__info {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2.25rem;
+}
+
+.about__box {
+    padding: 1.25rem 1rem;
+    text-align: left;
+}
+
+.about__icon {
+    font-size: 1.35rem;
+    color: var(--first-color-alt);
+    margin-bottom: 0.75rem;
+}
+
+.about__title {
+    font-size: 1.5rem;
+    font-weight: var(--font-bold);
+    margin-bottom: 0.15rem;
+}
+
+.about__subtitle {
+    font-size: var(--smallest-font-size);
+    color: var(--text-color-light);
+}
+
+@media screen and (max-width: 992px) {
     .about__container {
         grid-template-columns: 1fr;
-        row-gap: 2.5rem;
+        row-gap: 3rem;
     }
 
     .about__img {
-        width: 220px;
-    }
-
-    .about__box {
-        padding: 0.75rem 0.5rem;
+        width: 260px;
+        justify-self: center;
     }
 
     .about__data {
         text-align: center;
     }
 
-    .about__info {
-        justify-content: center;
-    }
-
-    .about__description {
-        padding: 0 5rem;
-        margin-bottom: 2rem;
+    .about__box {
+        text-align: center;
     }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 400px) {
     .about__info {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1fr 1fr;
     }
-
-    .about__description {
-        padding: 0;
-    }
-}
-
-@media screen and (max-width: 350px) {
-   .about__info {
-    grid-template-columns: repeat(2, 1fr);
-   }
 }

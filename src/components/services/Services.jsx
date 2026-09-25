@@ -1,141 +1,87 @@
 import React, { useState } from 'react';
 import './services.css';
-import { HiOutlineClipboardList, HiOutlineArrowSmRight, HiOutlineCheckCircle, HiX } from 'react-icons/hi';
+import { HiOutlineDeviceMobile, HiOutlineCode, HiOutlineSparkles, HiOutlineArrowSmRight, HiOutlineCheckCircle, HiX } from 'react-icons/hi';
+
+const services = [
+    {
+        icon: HiOutlineDeviceMobile,
+        title: "Mobile App Development",
+        summary: "Cross-platform React Native apps for iOS and Android with analytics, push notifications and social login built in, taken all the way to the stores.",
+        items: [
+            "Cross-platform apps with React Native & TypeScript",
+            "Native modules in Swift and Android",
+            "Firebase & Google Analytics integration",
+            "AppsFlyer, Adjust & Facebook event tracking",
+            "Push notifications & social login",
+            "Receipt printer integration over wireless, USB & Ethernet",
+            "App Store & Google Play release management",
+        ],
+    },
+    {
+        icon: HiOutlineCode,
+        title: "Web Development",
+        summary: "Fast, responsive web apps with React.js and Next.js, backed by Node.js APIs.",
+        items: [
+            "React.js & Next.js web applications",
+            "REST & GraphQL APIs with Node.js",
+            "MySQL data modelling and integration",
+            "Receipt printer integration over wireless, USB & Ethernet",
+        ],
+    },
+    {
+        icon: HiOutlineSparkles,
+        title: "Payments & AI Integration",
+        summary: "Monetisation and smart features: in-app purchases, subscriptions and AI models.",
+        items: [
+            "In-app purchases & subscriptions (iOS)",
+            "Google Play Billing integration",
+            "AI model and feature integration",
+        ],
+    },
+];
 
 const Services = () => {
     const [toggleState, setToggleState] = useState(0);
 
-    const toggleTab = (index) => {
-        setToggleState(index);
-    };
-
     return (
     <section className="services section" id="services">
-        <h2 className="section__title">Services</h2>
-        <span className="section__subtitle">Create + Collaborate</span>
-    
+        <span className="section__subtitle">Services</span>
+        <h2 className="section__title">What I can do for you</h2>
+
         <div className="services__container container grid">
-            <div className="services__content">
-                <div>
-                    <HiOutlineClipboardList className="services__icon" />
-                    <h3 className="services__title">Web + App<br />Developer</h3>
-                </div>
-                <span className="services__button" onClick={() => toggleTab(1)}>
-                    View More
-                    <HiOutlineArrowSmRight className="services__button-icon" />
-                </span>
-                <div className={toggleState === 1 ? "services__modal active-modal" : "services__modal"}>
-                    <div className="services__modal-content">
-                        <HiX onClick={() => toggleTab(0)} className="services__modal-close" />
-                        <h3 className="services__modal-title">Developer</h3>
-                        <p className="services__modal-description">
-                            Over 3 years of experience in web development providing quality work.
-                        </p>
-                        <ul className="services__modal-services grid">
-                            <li className="services__modal-service">
-                                <HiOutlineCheckCircle className="services__modal-icon" />
-                                <p className="services__modal-info">
-                                    Web page and app development
-                                </p>
-                            </li>
-                            <li className="services__modal-service">
-                                <HiOutlineCheckCircle className="services__modal-icon" />
-                                <p className="services__modal-info">
-                                    Integrate creative colloboration
-                                </p>
-                            </li>
-                            <li className="services__modal-service">
-                                <HiOutlineCheckCircle className="services__modal-icon" />
-                                <p className="services__modal-info">
-                                    Provide product mockups
-                                </p>
-                            </li>
-                        </ul>
+            {services.map(({ icon: Icon, title, summary, items }, index) => (
+                <div className="services__content card" key={title}>
+                    <div className="services__icon-box">
+                        <Icon className="services__icon" />
                     </div>
-                </div>
-            </div>
+                    <h3 className="services__title">{title}</h3>
+                    <p className="services__summary">{summary}</p>
+                    <span className="services__button" onClick={() => setToggleState(index + 1)}>
+                        View more
+                        <HiOutlineArrowSmRight className="services__button-icon" />
+                    </span>
 
-            <div className="services__content">
-                <div>
-                    <HiOutlineClipboardList className="services__icon" />
-                    <h3 className="services__title">UI/UX<br />Designer</h3>
-                </div>
-                <span className="services__button" onClick={() => toggleTab(2)}>
-                    View More
-                    <HiOutlineArrowSmRight className="services__button-icon" />
-                </span>
-                <div className={toggleState === 2 ? "services__modal active-modal" : "services__modal"}>
-                    <div className="services__modal-content">
-                        <HiX onClick={() => toggleTab(0)} className="services__modal-close" />
-                        <h3 className="services__modal-title">Designer</h3>
-                        <p className="services__modal-description">
-                            Over 2 years of experience in UI/UX design providing quality work.
-                        </p>
-                        <ul className="services__modal-services grid">
-                            <li className="services__modal-service">
-                                <HiOutlineCheckCircle className="services__modal-icon" />
-                                <p className="services__modal-info">
-                                    Create a user friendly interface
-                                </p>
-                            </li>
-                            <li className="services__modal-service">
-                                <HiOutlineCheckCircle className="services__modal-icon" />
-                                <p className="services__modal-info">
-                                    Develop with a minimal approach
-                                </p>
-                            </li>
-                            <li className="services__modal-service">
-                                <HiOutlineCheckCircle className="services__modal-icon" />
-                                <p className="services__modal-info">
-                                    Design with accessibility in mind
-                                </p>
-                            </li>
-                        </ul>
+                    <div
+                        className={toggleState === index + 1 ? "services__modal active-modal" : "services__modal"}
+                        onClick={() => setToggleState(0)}
+                    >
+                        <div className="services__modal-content" onClick={(e) => e.stopPropagation()}>
+                            <HiX onClick={() => setToggleState(0)} className="services__modal-close" />
+                            <h3 className="services__modal-title">{title}</h3>
+                            <p className="services__modal-description">{summary}</p>
+                            <ul className="services__modal-services grid">
+                                {items.map((item) => (
+                                    <li className="services__modal-service" key={item}>
+                                        <HiOutlineCheckCircle className="services__modal-icon" />
+                                        <p className="services__modal-info">{item}</p>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div className="services__content">
-                <div>
-                    <HiOutlineClipboardList className="services__icon" />
-                    <h3 className="services__title">Digital<br />Branding</h3>
-                </div>
-                <span className="services__button" onClick={() => toggleTab(3)}>
-                    View More
-                    <HiOutlineArrowSmRight className="services__button-icon" />
-                </span>
-                <div className={toggleState === 3 ? "services__modal active-modal" : "services__modal"}>
-                    <div className="services__modal-content">
-                        <HiX onClick={() => toggleTab(0)} className="services__modal-close" />
-                        <h3 className="services__modal-title">Branding</h3>
-                        <p className="services__modal-description">
-                            Over 3 years experience in branding providing quality work.
-                        </p>
-                        <ul className="services__modal-services grid">
-                            <li className="services__modal-service">
-                                <HiOutlineCheckCircle className="services__modal-icon" />
-                                <p className="services__modal-info">
-                                    Company logo and branding
-                                </p>
-                            </li>
-                            <li className="services__modal-service">
-                                <HiOutlineCheckCircle className="services__modal-icon" />
-                                <p className="services__modal-info">
-                                    Custom website and landing page
-                                </p>
-                            </li>
-                            <li className="services__modal-service">
-                                <HiOutlineCheckCircle className="services__modal-icon" />
-                                <p className="services__modal-info">
-                                    Design product mockups
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            ))}
         </div>
-        
     </section>
   );
 }

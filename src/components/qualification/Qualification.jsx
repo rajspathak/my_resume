@@ -11,8 +11,8 @@ const Qualification = () => {
   
     return (
     <section className="qualification section">
-        <h2 className="section__title">Qualification</h2>
-        <span className="section__subtitle">My Journey</span>
+        <span className="section__subtitle">Qualification</span>
+        <h2 className="section__title">My journey</h2>
 
         <div className="qualification__container container">
             <div className="qualification__tabs">
@@ -66,12 +66,12 @@ const Qualification = () => {
                     : "qualification__content"}>
                     <div className="qualification__data">
                         <div>
-                            <h3 className="qualification__title">Frontend Developer</h3>
-                            <span className="qualification__subtitle">React Native Developer</span>
-                            <span >Ecarter Technology</span>
+                            <h3 className="qualification__title">React Native Developer</h3>
+                            <a href="https://ecarter.co/" className="qualification__company" target="_blank" rel="noopener noreferrer">Ecarter Technology</a>
+                            <span className="qualification__subtitle">Noida, Uttar Pradesh</span>
                             <div className="qualification__calendar">
                                 <HiOutlineCalendar className="qualification__calendar-icon" />
-                                SEP 2022-Present
+                                Sep 2022 – Present
                             </div>
                         </div>
                         <div>
@@ -86,12 +86,12 @@ const Qualification = () => {
                             <span className="qualification__line"></span>
                         </div>
                         <div>
-                            <h3 className="qualification__title">Frontend Developer</h3>
-                            <span className="qualification__subtitle">React Native Developer</span>
-                            <span >Source Soft Solution</span>
+                            <h3 className="qualification__title">React Native Developer</h3>
+                            <a href="https://www.sourcesoftsolutions.com/" className="qualification__company" target="_blank" rel="noopener noreferrer">Source Soft Solution</a>
+                            <span className="qualification__subtitle">Noida, Uttar Pradesh</span>
                             <div className="qualification__calendar">
                                 <HiOutlineCalendar className="qualification__calendar-icon" />
-                                FEB 2022- SEP 2022
+                                Feb 2022 – Sep 2022
                             </div>
                         </div>
                     </div>
