@@ -69,9 +69,9 @@ const skillGroups = [
   },
   {
     icon: HiOutlineServer,
-    title: "Backend & AI",
+    title: "Backend, AI & System Design",
     span: 2,
-    skills: ["Node.js", "Spring Boot", "AI model integration"],
+    skills: ["Node.js", "Spring Boot", "AI model integration", "System Design"],
   },
   {
     icon: HiOutlineBadgeCheck,
